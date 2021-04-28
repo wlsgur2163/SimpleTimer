@@ -6,7 +6,7 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 import javax.swing.JComponent;
-
+import javax.swing.JOptionPane;
 
 public class TimeComponent extends JComponent
 {
@@ -115,7 +115,10 @@ public class TimeComponent extends JComponent
 		if(min1 == 6){
 			min1 = 0;
 		}
-		
+		if(min2 ==0 && min1 ==0 && sec1 ==0 && sec2 ==0 && mili1 ==1 && mili2 ==0) {
+		JOptionPane.showMessageDialog(null,"1분경과!");
+		JOptionPane.showMessageDialog(this, "계속 이어하시겠습니까?", "확인", JOptionPane.YES_NO_OPTION);
+		}
 		int currentXPos = 0;
 
 		if(model.start == 1 && model.reset == 0){
