@@ -1,6 +1,7 @@
 package DigitalTimer;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -45,14 +46,14 @@ public class Main
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("Digital Timer Component");
 		frame.setLayout(new BorderLayout());
-		frame.setSize(210, 82+25);
-		frame.setLocationRelativeTo(null);
+	    frame.setSize(240, 125+40);
+	    frame.setLocationRelativeTo(null);
 
-		panel.setLayout(new BorderLayout());
-		panel.setBackground(Color.BLACK);
+	    panel.setLayout(new GridLayout(3,3));
+	    panel.setBackground(Color.BLACK);
 		
-		panel.add(buttstart, BorderLayout.WEST);
-		panel.add(buttreset, BorderLayout.EAST);
+		panel.add(buttstart);
+		panel.add(buttreset);
 		panel.add(buttmode);
 		panel.add(buttminup);
 	    panel.add(buttsecup);
