@@ -10,6 +10,8 @@ public class Model{
 	int mindown = 0;
 	int secup = 0;
 	int secdown = 0;
+    int minup2 = 0;
+	int secup2 = 0;
 	
 	public int start(){
 		return start;
@@ -37,6 +39,12 @@ public class Model{
 	   }
 	   public void setSecdown(int n) {
 	      secdown = n;
+	   }
+	   public void setMinup2(int n) {
+		  minup2 = n;
+	   }
+	   public void setSecup2(int n) {
+		  secup2 = n;
 	   }
 
 }
