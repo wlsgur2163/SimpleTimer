@@ -15,8 +15,10 @@ public class Main
 	static TimeComponent t = new TimeComponent(model);
 	static ActionListener actionListenerSS;
 	static ActionListener actionListenerRESET;
-	static JButton buttstart = new JButton("Start/Stop");
+	static ActionListener actionListenerMode;
+	static JButton buttstart = new JButton("S/S");
 	static JButton buttreset = new JButton("Reset");
+	static JButton buttmode = new JButton("Timer");
 	static JFrame frame = new JFrame();
 	static JPanel panel = new JPanel();
     
@@ -26,6 +28,7 @@ public class Main
 		reset();
 		buttstart.addActionListener(actionListenerSS);
 		buttreset.addActionListener(actionListenerRESET);
+		buttmode.addActionListener(actionListenerMode);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("Digital Timer Component");
@@ -38,6 +41,7 @@ public class Main
 		
 		panel.add(buttstart, BorderLayout.WEST);
 		panel.add(buttreset, BorderLayout.EAST);
+		panel.add(buttmode);
 		
 		frame.add(t, BorderLayout.CENTER);
 		frame.add(panel, BorderLayout.SOUTH);
@@ -75,5 +79,5 @@ public class Main
             	  t.repaint();
               }
         };                
-    }
+    }              
 }
