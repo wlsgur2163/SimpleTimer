@@ -37,8 +37,15 @@ public class Main
     
 	public static void main(String[] args)
 	{
-		start();
-		reset();
+	      start();
+	      Mode();
+	      minup();
+	      mindown();
+	      reset();
+	      secup();
+	      secdown();
+	      minup2();
+	      secup2();
 		buttstart.addActionListener(actionListenerSS);
 		buttreset.addActionListener(actionListenerRESET);
 		buttmode.addActionListener(actionListenerMode);
@@ -73,7 +80,7 @@ public class Main
 
 		frame.setVisible(true);
 	}
-	
+	static int Ts=0;
 	static int onOff = 0;
 	public static void start(){        
 		actionListenerSS = new ActionListener() {
@@ -93,16 +100,88 @@ public class Main
         };                
     }
 	
-	public static void reset(){        
-		actionListenerRESET = new ActionListener() {
-              public void actionPerformed(ActionEvent actionEvent) {  
-            	  System.out.println("stop");
-        		  onOff =0;
-            	  model.setStart(0);
-            	  System.out.println("reset");
-            	  model.setReset(1);
-            	  t.repaint();
-              }
-        };                
-    }              
-}
+	 public static void Mode(){        
+		  actionListenerMode = new ActionListener() {
+		         public void actionPerformed(ActionEvent actionEvent) {  
+		            if(Ts == 0){
+		                 Ts =1;
+		                     model.setMode(1);
+		                     buttmode.setText("StopWatch");
+		                     t.repaint();
+		                 }else{
+		                    Ts =0;
+		                    buttmode.setText("Timer");
+		                     model.setMode(0);
+		                     
+		                 }
+		                 
+		              }
+		        };                
+		    }
+		   
+		   
+		   
+		   public static void reset(){        
+		      actionListenerRESET = new ActionListener() {
+		              public void actionPerformed(ActionEvent actionEvent) {  
+		                 System.out.println("reset");
+		                 model.setReset(1);
+		                 t.repaint();
+		              }
+		        };                
+		   }
+		   public static void minup() {
+		      actionListenerMinup = new ActionListener() {
+		         public void actionPerformed(ActionEvent actionEvent) {
+		            t.min2 ++;
+		            model.setMinup(1);
+		            t.repaint();
+		         }
+		      };
+		   }
+		   public static void mindown() {
+		      actionListenerMindown = new ActionListener() {
+		         public void actionPerformed(ActionEvent actionEvent) {
+		            t.min2 --;
+		            model.setMindown(1);
+		            t.repaint();
+		         }
+		      };
+		   }
+		   public static void secup() {
+		      actionListenerSecup = new ActionListener() {
+		         public void actionPerformed(ActionEvent actionEvent) {
+		            t.sec2 ++;
+		            model.setSecup(1);
+		            t.repaint();
+		         }
+		      };
+		   }
+		   public static void secdown() {
+		      actionListenerSecdown = new ActionListener() {
+		         public void actionPerformed(ActionEvent actionEvent) {
+		            t.sec2 --;
+		            model.setSecdown(1);
+		            t.repaint();
+		         }
+		      };
+		   }
+		   public static void minup2() {
+		      actionListenerMinup2 = new ActionListener() {
+		         public void actionPerformed(ActionEvent actionEvent) {
+		            t.min2 +=5;
+		            model.setMinup2(1);
+		            t.repaint();
+		         }
+		      };
+		   }
+		   public static void secup2() {
+		      actionListenerSecup2 = new ActionListener() {
+		         public void actionPerformed(ActionEvent actionEvent) {
+		            t.sec2 +=5;
+		            model.setSecup2(1);
+		            t.repaint();
+		         }
+		      };
+		   }
+		}
