@@ -16,9 +16,17 @@ public class Main
 	static ActionListener actionListenerSS;
 	static ActionListener actionListenerRESET;
 	static ActionListener actionListenerMode;
+	static ActionListener actionListenerMinup;
+	static ActionListener actionListenerSecup;
+	static ActionListener actionListenerSecdown;
+	static ActionListener actionListenerMindown;
 	static JButton buttstart = new JButton("S/S");
 	static JButton buttreset = new JButton("Reset");
 	static JButton buttmode = new JButton("Timer");
+	static JButton buttminup = new JButton("min¡è");
+	static JButton buttsecup = new JButton("s/m¡è");
+	static JButton buttmindown = new JButton("min¡é");
+	static JButton buttsecdown = new JButton("s/m¡é");
 	static JFrame frame = new JFrame();
 	static JPanel panel = new JPanel();
     
@@ -29,6 +37,10 @@ public class Main
 		buttstart.addActionListener(actionListenerSS);
 		buttreset.addActionListener(actionListenerRESET);
 		buttmode.addActionListener(actionListenerMode);
+		buttminup.addActionListener(actionListenerMinup);
+	    buttsecup.addActionListener(actionListenerSecup);
+	    buttmindown.addActionListener(actionListenerMindown);
+	    buttsecdown.addActionListener(actionListenerSecdown);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("Digital Timer Component");
@@ -42,7 +54,11 @@ public class Main
 		panel.add(buttstart, BorderLayout.WEST);
 		panel.add(buttreset, BorderLayout.EAST);
 		panel.add(buttmode);
-		
+		panel.add(buttminup);
+	    panel.add(buttsecup);
+	    panel.add(buttmindown);
+	    panel.add(buttsecdown);
+	    
 		frame.add(t, BorderLayout.CENTER);
 		frame.add(panel, BorderLayout.SOUTH);
 
